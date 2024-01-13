@@ -30,6 +30,8 @@ const Die = (props) => {
   for (let i = 1 ; i<= props.value ; i++){
     dots.push(<span key={i} className='dot'></span>)
   }
+
+  
   return (
     <div className={`square ${dieFace}`} key={props.id} onClick={props.holdDice}
      style={{ backgroundColor: props.isHeld? '#59E391' : 'white'}}>

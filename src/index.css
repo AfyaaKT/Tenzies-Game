@@ -47,9 +47,7 @@ main{
   width: 40px;
   box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.15);
   border-radius: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+ 
   cursor: pointer;
   background-color: white;
   padding: 10px;
@@ -77,6 +75,7 @@ main{
   height: 10px;
   width: 10px;
   border-radius: 50%;
+
 }
 
 .face-one{
@@ -85,24 +84,42 @@ main{
   align-items: center;
 }
 
-.face-two{
-  display: flex;
-  justify-content: space-between;
-}
+
 .face-three{
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template: repeat(3,1fr) / repeat(3,1fr) ;
+  place-items: center;
+}
+.face-three span:nth-child(1){
+  grid-column: 1 / 2;
+}
+.face-three span:nth-child(2){
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+.face-three span:nth-child(3){
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
 }
 
-.face-six , .face-four {
+.face-six , .face-four , .face-two {
   display: grid;
-  grid-template : auto auto / repeat(2,1fr);
+  grid-template-columns : repeat(2,1fr);
   place-items: center;
 }
 
 .face-five{
   display: grid;
-  grid-template : auto auto / repeat(2,1fr);
+  grid-template : auto / repeat(2,1fr);
   place-items: center ;
+  column-gap: 10px;
+ 
 }
 
+.face-five span:nth-child(3){
+  background-color: black;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  grid-column: 1 / -1;
+}
